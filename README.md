@@ -6,3 +6,4 @@ The dot navigation either uses a slide transition if the selected image is adjac
 
 Javascript can be made more concise but at this point I'm sick of looking at this. Those scroll animations were driving me crazy all day.
 
+When I update the Javascript I will make the code more modular for use with webpack.
