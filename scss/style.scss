@@ -7,11 +7,6 @@
   overflow: hidden;
   position: relative;
   margin: auto;
-  // .wide-slide {
-  //   height: 100%;
-  //   position: relative;
-  //   font-size: 0;
-  //   transition-duration: 1s;
   .mySlides {
     position: absolute;
     width: 100%;
@@ -80,7 +75,6 @@
         background-color: #bbb;
         border-radius: 50%;
         display: inline-block;
-        // transition: background-color 0.6s ease;
       }
       .active, .dot:hover {
         background-color: #eee;
