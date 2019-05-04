@@ -11,6 +11,7 @@
   margin: auto;
   /* Next & previous buttons */
   /* Position the "next button" to the right */
+  /* Caption text */
 }
 .slideshow-container .mySlides {
   position: absolute;
@@ -83,6 +84,15 @@
 }
 .slideshow-container .navigation .dot-container .active, .slideshow-container .navigation .dot-container .dot:hover {
   background-color: #eee;
+}
+.slideshow-container .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

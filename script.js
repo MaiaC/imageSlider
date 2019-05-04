@@ -3,14 +3,6 @@ const slides = [...document.querySelectorAll('.mySlides')]
 const dots = [...document.querySelectorAll('.dot')]
 let nextIndex = 1
 let prevIndex = slides.length - 1
-// const wideSlide = document.querySelector(".wide-slide")
-
-// const setWidths = () => {
-//   wideSlide.style.width = slides.length * 850 + "px"
-//   slides.forEach((val, num) => {
-//     slides[num].style.width = 100 / slides.length + "%"
-//   })
-// }
 
 const sliderController = (() => {
 	const toNextSlide = () => {
