@@ -4,3 +4,5 @@ Slide transitions actually slide in and out, including when transitioning betwee
 It plays automatically and also has two different types of navigation. Forward and back buttons do just that.
 The dot navigation either uses a slide transition if the selected image is adjacent or it has a fade transition if the selected image is not adjacent.
 
+Javascript can be made more concise but at this point I'm sick of looking at this. Those scroll animations were driving me crazy all day.
+
