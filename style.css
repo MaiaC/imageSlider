@@ -12,18 +12,28 @@
   /* Next & previous buttons */
   /* Position the "next button" to the right */
 }
-.slideshow-container .wide-slide {
+.slideshow-container .mySlides {
+  width: 100%;
   height: 100%;
-  position: relative;
-  font-size: 0;
-  transition-duration: 1s;
-}
-.slideshow-container .wide-slide .mySlides {
-  width: 850px;
-  height: 100%;
-  display: inline-block;
+  position: absolute;
+  top: 0;
   background-position: center;
   background-size: cover;
+  transition-property: left;
+  transition-duration: 1s;
+  opacity: 0;
+}
+.slideshow-container .current-slide {
+  left: 0;
+  opacity: 1;
+}
+.slideshow-container .prev-slide {
+  left: -100%;
+  opacity: 1;
+}
+.slideshow-container .next-slide {
+  opacity: 1;
+  left: 100%;
 }
 .slideshow-container .prev, .slideshow-container .next {
   cursor: pointer;
