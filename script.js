@@ -19,10 +19,6 @@ const sliderController = (() => {
 	const toPrevSlide = () => {
 		goToSlide(slideIndex - 1)
 	}
-	// const removeDisplay = () => {
-  //   // slides[slideIndex].className = "mySlides prev-slide"
-	// 	dots[slideIndex].className = 'dot'
-	// }
 	const setNewIndex = n => {
 		if (n == slides.length) {
       slideIndex = 0
@@ -58,22 +54,62 @@ const sliderController = (() => {
         slides[num].className = "mySlides"
       }
     })
-		dots[slideIndex].className = 'dot active'
+    dots[slideIndex].className = 'dot active'
 	}
 	const goToSlide = n => {
-    // removeDisplay()
     dots[slideIndex].className = 'dot'
 		setNewIndex(n)
 		showNewSlide()
-	}
+  }
+  const resetPrevNext = () => {
+    slides.forEach((val, num) => {
+      if (num == prevIndex) {
+        slides[num].className = "mySlides prev-slide behind"
+      } else if (num == slideIndex) {
+        slides[num].className = "mySlides current-slide"
+      } else if (num == nextIndex) {
+        slides[num].className = "mySlides next-slide behind"
+      } else {
+        slides[num].className = "mySlides"
+      }
+    })
+    removeBehind()
+  }
+  const removeBehind = () => {
+    slides.forEach((val, num) => {
+      if (num == prevIndex) {
+        slides[num].className = "mySlides prev-slide"
+      } else if (num == nextIndex) {
+        slides[num].className = "mySlides next-slide"
+      }
+    })
+  }
+  const dotsNav = n => {
+    if (slides[n].className === "mySlides") {
+      dots[slideIndex].className = 'dot'
+      slides.forEach((val, num) => {
+        if (num == slideIndex) {
+          slides[num].className = "mySlides fade"
+        } else {
+          slides[num].className = "mySlides"
+        }
+      })
+      slides[n].className = "mySlides current-slide fade"
+      dots[n].className = 'dot active'
+      setNewIndex(n)
+      setTimeout(resetPrevNext, 1000)
+    } else {
+      goToSlide(n)
+    }
+  }
 	const display = clicked => {
 		clearInterval(slideInterval)
 		if (clicked.className == 'prev') {
 			toPrevSlide()
 		} else if (clicked.className == 'next') {
 			toNextSlide()
-		} else {
-			goToSlide(dots.indexOf(clicked))
+		} else if (clicked.className == 'dot') {
+      dotsNav(dots.indexOf(clicked))
 		}
 		slideInterval = setInterval(toNextSlide, 40000)
 	}

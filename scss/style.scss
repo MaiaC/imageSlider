@@ -13,17 +13,16 @@
   //   font-size: 0;
   //   transition-duration: 1s;
   .mySlides {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    // left: 100%;
-    background-position: center;
-    background-size: cover;
     transition-property: left;
     transition-duration: 1s;
     opacity: 0;
+    background-position: center;
+    background-size: cover;
   }
+
   .current-slide {
     left: 0;
     opacity: 1;
@@ -36,7 +35,13 @@
     opacity: 1;
     left: 100%;
   }
-  // }
+  .fade {
+    transition-property: opacity;
+  }
+  .behind {
+    z-index: -1;
+    transition-duration: 0s;
+  }
   /* Next & previous buttons */
   .prev, .next {
     cursor: pointer;
