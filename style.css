@@ -12,9 +12,16 @@
   /* Next & previous buttons */
   /* Position the "next button" to the right */
 }
-.slideshow-container .mySlides {
-  display: none;
+.slideshow-container .wide-slide {
   height: 100%;
+  position: relative;
+  font-size: 0;
+  transition-duration: 1s;
+}
+.slideshow-container .wide-slide .mySlides {
+  width: 850px;
+  height: 100%;
+  display: inline-block;
   background-position: center;
   background-size: cover;
 }
@@ -61,7 +68,5 @@
 .slideshow-container .navigation .dot-container .active, .slideshow-container .navigation .dot-container .dot:hover {
   background-color: #eee;
 }
-
-/* The dots/bullets/indicators */
 
 /*# sourceMappingURL=style.css.map */
